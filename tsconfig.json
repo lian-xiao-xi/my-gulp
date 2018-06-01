@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module":"amd",
+    "noImplicitAny":true,
+    "removeComments":false,
+    "sourceMap":true,
+    "target": "es5",
+    // 单页时使用下面这个输出主文件的配置
+    // "outFile": "main.js"
+  },
+  "files": [
+    "src/**/*.ts"
+  ],
+  "exclude":["node_modules", "assets", "**/*.spec.ts"]
+}

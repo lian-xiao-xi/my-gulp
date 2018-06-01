@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>page B</title>
+  <link rel="stylesheet" href="./assets/normalize.css">
+  <link rel="stylesheet" href="css/page_b/index.css">
+  <script src="./assets/require.js"></script>
+  
+</head>
+<body>
+  <div class="root-wrap">
+    <nav>
+      <a href="./page_a.html">点击跳转到page_a页面</a>
+    </nav>
+    <header class="header">
+      <h1 class="title">这里是页面page_b</h1>
+    </header>
+  </div>
+</body>
+<script src="javascript/page_b/index.js"></script>
+
+<script>
+  require(['index'])
+</script>
+</html>

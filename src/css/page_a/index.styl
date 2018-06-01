@@ -1,0 +1,44 @@
+@import '../common/base.styl'
+@import '../common/mixin.styl'
+@import '../common/variable.styl'
+
+.root-wrap
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: center 
+  transform: translate(1px,1px)
+  no-wrap()
+  
+  .header
+    display block
+    .title
+      width: 500px
+      text-align: center
+      line-height: 1.42
+      color: $color-theme-l
+      text-decoration: overline
+      border-radius: 4px
+    .veryh
+      display block
+      height 1000px
+      width: 60%
+      text-align: center
+      background-color: $color-theme-d
+      margin 0 auto
+      padding-bottom: 200px
+      margin-bottom: 200px
+      border-1px(blue)
+      font: inherit
+      line-height: inherit 
+      border-bottom: 1px solid transparent
+
+
+.example 
+  display block
+  width: 500px
+  height: 300px
+  margin: 0 auto
+  border-1px(#000000)
+  border-bottom: 1px solid transparent
+  margin-bottom: 100px
