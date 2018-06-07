@@ -97,7 +97,7 @@ gulp.task('watch', ['copyStatic', "useBabel", 'typescriptToJs', 'postcss'], func
     },
     port: 8050 // 指定访问服务器的端口号
   });
-  gulp.watch(['src/*.html', 'src/assets'], ['copyStatic'])
+  gulp.watch(['src/*.html', 'src/assets/**/*'], ['copyStatic'])
   gulp.watch('src/css/**/*.styl', ['stylusToCss', 'postcss'])
   gulp.watch('src/javascript/**/*.ts', ['typescriptToJs'])
   gulp.watch('src/javascript/**/*.js', ['useBabel'])
