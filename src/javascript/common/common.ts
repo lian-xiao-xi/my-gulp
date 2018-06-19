@@ -1,21 +1,3 @@
-// export function getHrefVal(key: string):string {
-//   let WinHrefSearch: string = window.location.search;
-//   if(WinHrefSearch.trim().length === 0) {
-//     return ''
-//   } else {
-//     WinHrefSearch = WinHrefSearch.replace(/&amp;/g, '&').substr(1);
-//     let arr: string[] = WinHrefSearch.split('&');
-//     let searchKeyVal = {};
-//     let newArr: string[];
-//     arr.forEach((item: string) => {
-//       newArr = item.split('=');
-//       if(newArr[0] === key) {
-//         return newArr[1]
-//       }
-//     })
-//   }
-// }
-
 /**
  * 获取url中的参数的值
  */
@@ -31,10 +13,32 @@ export function getHrefVal(name: string, url?: string) :string {
     else return decodeURIComponent(regMatch[2]);
 }
 
-export function bodyAppend(text:string) {
-  let pEle = document.createElement('p')
-  pEle.innerText = text
-  pEle.classList.add('add-ele')
-  document.querySelector('body').appendChild(pEle)
-}
 
+/**
+ * 对html字符转义
+ */
+export function htmlEncode(html: string): string {
+    //1.首先动态创建一个容器标签元素，如DIV
+    let temp = document.createElement ("div");
+    //2.然后将要转换的字符串设置为这个元素的innerText(ie支持)或者textContent(火狐，google支持)
+    (temp.textContent != undefined ) ? (temp.textContent = html) : (temp.innerText = html);
+    //3.最后返回这个元素的innerHTML，即得到经过HTML编码转换的字符串了
+    let output = temp.innerHTML;
+    temp = null;
+    return output;
+  }
+  
+  /**
+   * 对html字符反转义
+   */
+  export function htmlDecode(text:string): string {
+    //1.首先动态创建一个容器标签元素，如DIV
+    let temp = document.createElement("div");
+    //2.然后将要转换的字符串设置为这个元素的innerHTML(ie，火狐，google都支持)
+    temp.innerHTML = text;
+    //3.最后返回这个元素的innerText(ie支持)或者textContent(火狐，google支持)，即得到经过HTML解码的字符串了。
+    let output = temp.innerText || temp.textContent;
+    temp = null;
+    return output;
+  }
+  
