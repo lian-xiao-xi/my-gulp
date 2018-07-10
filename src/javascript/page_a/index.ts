@@ -1,7 +1,5 @@
 import * as tscomFun from '../common/common'
 
-tscomFun.bodyAppend('pageA')
-
 /**
  * ====== 接口 ======
  */
