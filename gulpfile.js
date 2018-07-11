@@ -62,14 +62,15 @@ gulp.task('useBabel', function () {
   return gulp.src('src/javascript/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['env', {
+      "presets": [['env', {
         "modules": false,
         // "modules": 'amd',
         "targets": {
           "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
         }
-      }],
-      plugins: ["transform-runtime"]
+      }]],
+      "plugins": ["transform-runtime"]
+      // "plugins": ["transform-runtime", "transform-es2015-modules-amd"]
     }))
     .pipe(sourcemaps.write('maps'))
     .pipe(gulp.dest('dist/javascript'))
