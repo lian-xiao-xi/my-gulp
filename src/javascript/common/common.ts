@@ -9,7 +9,7 @@ export function getHrefVal(name: string, url?: string) :string {
         let _url = url.split("?")[1];
         regMatch = _url.match(reg);
     }
-    if (regMatch) return '';
+    if (regMatch === null) return '';
     else return decodeURIComponent(regMatch[2]);
 }
 

@@ -1,3 +1,15 @@
 import * as tscomFun from '../common/common'
+console.log('href aaa ', tscomFun.getHrefVal('aaa'))
 
-tscomFun.bodyAppend('pageB')
+function timeout(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms);
+  console.log(value);
+}
+
+asyncPrint('hello world', 50);

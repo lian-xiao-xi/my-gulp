@@ -1,4 +1,30 @@
 import * as tscomFun from '../common/common'
+console.log('href id ', tscomFun.getHrefVal('id'))
+let handler = {
+  get: function(target, name) {
+    if (name === 'prototype') {
+      return Object.prototype;
+    }
+    return 'Hello, ' + name;
+  },
+
+  apply: function(target, thisBinding, args) {
+    return args[0];
+  },
+
+  construct: function(target, args) {
+    return {value: args[1]};
+  }
+};
+
+let fproxy = new Proxy(function(x, y) {
+  return x + y;
+}, handler);
+
+fproxy(1, 2) // 1
+new fproxy(1, 2) // {value: 2}
+fproxy.prototype === Object.prototype // true
+fproxy.foo === "Hello, foo" // true
 
 /**
  * ====== 接口 ======
